@@ -2,25 +2,20 @@ import pygame
 
 pygame.init()
 
-screen = pygame.display.set_mode((600,400))
-pygame.display.set_caption("Sprite example")
+window = pygame.display.set_mode((600,600))
+window.fill((255, 255, 255))
 
-image_unk = pygame.image.load("images.png")
+Green = (0,255, 0)
+pygame.draw.circle(window, Green, (300,300),50)
 
-x = 250
-y = 150
-done = False
+pygame.draw.circle(window, Green,(300,300),50, 3)
 
-while not done:
+pygame.display.update()
+
+running = True
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            done = True
-            
-            
-    screen.fill((255, 255, 255))
-    
-    screen.blit(image_unk, (x, y))
-    
-    pygame.display.flip()
+            running = False
 
 pygame.quit()
